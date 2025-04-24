@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Calculadora Moderna</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+  </head>
+  <body>
+    <header class="header space-y-2" id="header-container">
+      <div class="header-container ">
+        <h1 class="header-title" id="text-theme">Calculadora</h1>
+        <button id="btn-alterated-theme" class="theme-toggle" aria-label="Mudar tema" title="Mudar tema">
+          <img src="./imgs/moon-icon.svg" id="imageTheme" class="theme-icon" alt="Ícone para mudar tema"/>
+        </button>
+      </div>
+      <h4 class="header-subtitle" id="text-theme">Desenvolvido por: Mateus fc</h4>
+    </header>
+
+    <main>
+      <div class="main-wrapper" id="main-container">
+        <div class="calculator-container" id="calculator-container">
+          <div class="calculator-header" id="calculator-header">
+            <h2 class="calculator-title" id="text-theme">Calculadora</h2>
+          </div>
+          <div class="calculator-display" id="calculator-display">
+            <input type="text" class="display-input" id="display-input" value="0" disabled/>
+          </div>
+          <div class="calculator-buttons">
+            <button class="btn-calc calculator-button">7</button>
+            <button class="btn-calc calculator-button">8</button>
+            <button class="btn-calc calculator-button">9</button>
+            <button class="calculator-button operator">/</button>
+            <button class="btn-calc calculator-button">4</button>
+            <button class="btn-calc calculator-button">5</button>
+            <button class="btn-calc calculator-button">6</button>
+            <button class="calculator-button operator">*</button>
+            <button class="btn-calc calculator-button">1</button>
+            <button class="btn-calc calculator-button">2</button>
+            <button class="btn-calc calculator-button">3</button>
+            <button class="calculator-button operator">-</button>
+            <button class="btn-calc calculator-button">0</button>
+            <button class="btn-calc calculator-button">.</button>
+            <button class="calculator-button equal">=</button>
+            <button class="calculator-button operator">+</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

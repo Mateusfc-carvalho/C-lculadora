@@ -1,0 +1,17 @@
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+/*Desktop*/
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    
+}
+
+
+
+/*Telas maiores*/
+@media screen and (min-width: 1441px) {
+    
+}
