@@ -28,8 +28,10 @@ export function alteratedTheme() {
     textTheme.forEach((element) => {
       if (!element.classList.contains("dark-mode-text")) {
         element.classList.add("dark-mode-text");
+        textTheme[0].classList.add('efect-text');
       } else {
         element.classList.remove("dark-mode-text");
+        textTheme[0].classList.remove('efect-text');
       }
     });
 
@@ -68,10 +70,10 @@ export function alteratedTheme() {
     }
 
     btnCalc.forEach((btn) => {
-      if (!btn.classList.contains("dark-mode")) {
-        btn.classList.add("dark-mode");
+      if (!btn.classList.contains("background-input")) {
+        btn.classList.add("background-input");
       } else {
-        btn.classList.remove("dark-mode");
+        btn.classList.remove("background-input");
       }
     });
   });
