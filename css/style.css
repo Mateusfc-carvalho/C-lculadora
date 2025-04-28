@@ -5,13 +5,13 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
 }
 
 /* Theme Variables */
 :root {
   --primary-bg: #f5f5f5;
-  --secondary-bg: #ffffff;
+  --secondary-bg: #f1f1f1ef;
   --primary-color: #1b1b1b;
 
   --button-bg: #e0e0e0;
@@ -116,11 +116,13 @@ body {
   gap: 0.5rem;
   padding: 0.5rem;
 }
+
 .calculator-button {
   padding: 0.6rem;
   font-size: 1rem;
   border: none;
   background-color: var(--button-bg);
+  color: #0d0d0d;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.2s ease;
@@ -131,14 +133,12 @@ body {
 }
 .calculator-button.operator {
   background-color: var(--operator-bg);
-  color: #fff;
 }
 .calculator-button.operator:hover {
   background-color: var(--operator-hover-bg);
 }
 .calculator-button.equal {
   background-color: var(--equal-bg);
-  color: #fff;
 }
 .calculator-button.equal:hover {
   background-color: var(--equal-hover-bg);

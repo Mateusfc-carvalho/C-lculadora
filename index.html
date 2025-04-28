@@ -11,43 +11,56 @@
   <body>
     <header class="header space-y-2" id="header-container">
       <div class="header-container ">
-        <h1 class="header-title mb-3" id="text-theme">Calculadora</h1>
+        <h1 class="header-title mb-3 text-theme">Calculadora</h1>
         <button id="btn-alterated-theme" class="theme-toggle" aria-label="Mudar tema" title="Mudar tema">
           <img src="./imgs/moon-icon.svg" id="imageTheme" class="theme-icon" alt="Ícone para mudar tema"/>
         </button>
       </div>
-      <h4 class="header-subtitle" id="text-theme">Desenvolvido por: Mateus fc</h4>
+      <h4 class="header-subtitle text-theme">Desenvolvido por: Mateus fc</h4>
     </header>
 
     <main>
       <div class="main-wrapper" id="main-container">
         <div class="calculator-container" id="calculator-container">
           <div class="calculator-header" id="calculator-header">
-            <h2 class="calculator-title" id="text-theme">Calculadora</h2>
+            <h2 class="calculator-title text-theme">Calculadora</h2>
           </div>
           <div class="calculator-display" id="calculator-display">
             <input type="text" class="display-input" id="display-input" value="0" disabled/>
           </div>
           <div class="calculator-buttons">
-            <button class="btn-calc calculator-button">7</button>
-            <button class="btn-calc calculator-button">8</button>
-            <button class="btn-calc calculator-button">9</button>
-            <button class="calculator-button operator">/</button>
-            <button class="btn-calc calculator-button">4</button>
-            <button class="btn-calc calculator-button">5</button>
-            <button class="btn-calc calculator-button">6</button>
-            <button class="calculator-button operator">*</button>
-            <button class="btn-calc calculator-button">1</button>
-            <button class="btn-calc calculator-button">2</button>
-            <button class="btn-calc calculator-button">3</button>
-            <button class="calculator-button operator">-</button>
-            <button class="btn-calc calculator-button">0</button>
-            <button class="btn-calc calculator-button">.</button>
-            <button class="calculator-button equal">=</button>
-            <button class="calculator-button operator">+</button>
+            <button 
+              class="btn-calc calculator-button bg-red-500 hover:bg-red-600  font-bold py-4 px-2 rounded" 
+              id="clear">
+              clear
+            </button>
+            <button 
+              class="btn-calc calculator-button bg-green-500 hover:bg-green-600 py-4 px-2 rounded" 
+              id="cpy">
+              cpy
+            </button>
+            <button class="btn-calc calculator-button button-calculation">(</button>
+            <button class="btn-calc calculator-button button-calculation">)</button>
+            <button class="btn-calc calculator-button button-calculation">7</button>
+            <button class="btn-calc calculator-button button-calculation">8</button>
+            <button class="btn-calc calculator-button button-calculation">9</button>
+            <button class="calculator-button operator btn-calc">/</button>
+            <button class="btn-calc calculator-button button-calculation">4</button>
+            <button class="btn-calc calculator-button button-calculation">5</button>
+            <button class="btn-calc calculator-button button-calculation">6</button>
+            <button class="calculator-button operator btn-calc">x</button>
+            <button class="btn-calc calculator-button button-calculation">1</button>
+            <button class="btn-calc calculator-button button-calculation">2</button>
+            <button class="btn-calc calculator-button button-calculation">3</button>
+            <button class="calculator-button operator btn-calc">-</button>
+            <button class="btn-calc calculator-button button-calculation">0</button>
+            <button class="btn-calc calculator-button button-calculation">.</button>
+            <button class="calculator-button equal btn-calc">=</button>
+            <button class="calculator-button operator btn-calc">+</button>
           </div>
         </div>
       </div>
+        
     </main>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="script.js"></script>

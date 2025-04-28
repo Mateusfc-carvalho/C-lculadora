@@ -1,80 +1,65 @@
-export function alteratedTheme() {
-  // buttons for modifications
+export function togglerTheme() {
   const btnAlteratedTheme = document.getElementById("btn-alterated-theme");
   const imageTheme = document.getElementById("imageTheme");
-  // modifying the theme of html elements
+
   const headerContainer = document.getElementById("header-container");
   const mainContainer = document.getElementById("main-container");
-  const textTheme = [...document.querySelectorAll("#text-theme")];
+  const textTheme = [...document.querySelectorAll(".text-theme")];
   const calculatorContainer = document.getElementById("calculator-container");
   const calculatorHeader = document.getElementById("calculator-header");
   const calculatorDisplay = document.getElementById("calculator-display");
   const displayInput = document.getElementById("display-input");
   const btnCalc = [...document.querySelectorAll(".btn-calc")];
 
-  btnAlteratedTheme.addEventListener("click", () => {
-    const currentIcon = imageTheme.getAttribute("src");
-    if (currentIcon.includes("./imgs/moon-icon.svg")) {
+  // Função que aplica o tema
+  const aplicarTema = (modoDark) => {
+    if (modoDark) {
       imageTheme.setAttribute("src", "./imgs/sun-icon.svg");
+
+      headerContainer.classList.add("dark-mode-container");
+      mainContainer.classList.add("dark-mode-container");
+      calculatorContainer.classList.add("dark-mode-container");
+      calculatorHeader.classList.add("dark-mode-container");
+      calculatorDisplay.classList.add("dark-mode-container", "background-input");
+      displayInput.classList.add("dark-mode-container", "background-input");
+
+      textTheme.forEach((element) => {
+        element.classList.add("dark-mode-text");
+        textTheme[0].classList.add("efect-text");
+      });
+
+      btnCalc.forEach((btn) => btn.classList.add("background-input"));
+
+      localStorage.setItem("theme", "dark");
     } else {
       imageTheme.setAttribute("src", "./imgs/moon-icon.svg");
-    }
 
-    if (!headerContainer.classList.contains("dark-mode-container")) {
-      headerContainer.classList.add("dark-mode-container");
-    } else {
       headerContainer.classList.remove("dark-mode-container");
-    }
-    textTheme.forEach((element) => {
-      if (!element.classList.contains("dark-mode-text")) {
-        element.classList.add("dark-mode-text");
-        textTheme[0].classList.add('efect-text');
-      } else {
-        element.classList.remove("dark-mode-text");
-        textTheme[0].classList.remove('efect-text');
-      }
-    });
-
-    if (!mainContainer.classList.contains("dark-mode-container")) {
-      mainContainer.classList.add("dark-mode-container");
-    } else {
       mainContainer.classList.remove("dark-mode-container");
-    }
-
-    if (!calculatorContainer.classList.contains("dark-mode-container")) {
-      calculatorContainer.classList.add("dark-mode-container");
-    } else {
       calculatorContainer.classList.remove("dark-mode-container");
-    }
-
-    if (!calculatorHeader.classList.contains("dark-mode-container")) {
-      calculatorHeader.classList.add("dark-mode-container");
-    } else {
       calculatorHeader.classList.remove("dark-mode-container");
-    }
+      calculatorDisplay.classList.remove("dark-mode-container", "background-input");
+      displayInput.classList.remove("dark-mode-container", "background-input");
 
-    if ((!calculatorDisplay.classList.contains("dark-mode-container")) && (!calculatorDisplay.classList.contains('background-input'))) {
-      calculatorDisplay.classList.add("dark-mode-container");
-      calculatorDisplay.classList.add("background-input");
-    } else {
-      calculatorDisplay.classList.remove("dark-mode-container");
-      calculatorDisplay.classList.remove("background-input");
-    }
+      textTheme.forEach((element) => {
+        element.classList.remove("dark-mode-text");
+        textTheme[0].classList.remove("efect-text");
+      });
 
-    if ((!displayInput.classList.contains("dark-mode-container")) && (!displayInput.classList.contains('background-input'))) {
-      displayInput.classList.add("dark-mode-container");
-      displayInput.classList.add("background-input");
-    } else {
-      displayInput.classList.remove("dark-mode-container");
-      displayInput.classList.remove("background-input");
-    }
+      btnCalc.forEach((btn) => btn.classList.remove("background-input"));
 
-    btnCalc.forEach((btn) => {
-      if (!btn.classList.contains("background-input")) {
-        btn.classList.add("background-input");
-      } else {
-        btn.classList.remove("background-input");
-      }
-    });
+      localStorage.setItem("theme", "light");
+    }
+  };
+
+  // Aplica o tema salvo ao carregar
+  const temaSalvo = localStorage.getItem("theme");
+  aplicarTema(temaSalvo === "dark");
+
+  // Alternar tema ao clicar
+  btnAlteratedTheme.addEventListener("click", () => {
+    const temaAtual = localStorage.getItem("theme") === "dark";
+    aplicarTema(!temaAtual); // alterna
   });
 }
+
